@@ -26,8 +26,11 @@
  <button onclick="calculate()">Calculate</button>
  <p id="output">Result: </p>
 
- <button onclick="performCalculation()">perform</button>
- <p id="output1">Result: </p>
+ <!-- <button onclick="performCalculation()">perform</button>
+ <p id="output1">Result: </p> -->
+
+ <button id="sendbutton">Send</button>
+ <p id="output2">what happened: </p>
 
  <script src="operate.js"></script>
 <script>
@@ -88,7 +91,31 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
        output: result,
      });}
 
-if('serviceWorker' in navigator) {
+     function sendinput(){
+        window.webkit.messageHandlers.postMessage({result: result});
+        result2 = 111
+        document.getElementById("output2").textContent = "what happened: " + result2;
+     }
+
+     function perform(){
+    window.webkit.messageHandlers.pwaHandler.postMessage({
+     integer1: integer1,
+     integer2: integer2,
+      operation: operation,
+       output: result
+     });
+     }
+
+     const button = document.getElementById("sendbutton");
+     button.addEventListener("click", () => {
+        const datatosend = {message: "hello from pwa"};
+        senddata(datatosend);
+     });
+
+     function senddata(data){
+        window.webkit.messageHandlers.pwaHandler.postMessage(data);
+     }
+if('ServiceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js');
       }
  </script>
