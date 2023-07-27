@@ -24,9 +24,10 @@
  <input type="number" id="integer2" required>
 
  <button onclick="calculate()">Calculate</button>
- <button onclick="performCalculation()">perform</button>
-
  <p id="output">Result: </p>
+
+ <button onclick="performCalculation()">perform</button>
+ <p id="output1">Result: </p>
 
  <script src="operate.js"></script>
 <script>
@@ -55,6 +56,37 @@ result = "Invalid operation";
 
 document.getElementById("output").textContent = "Result: " + result;
 }
+
+function performCalculation()
+ {
+     const integer1 = parseInt(document.getElementById("integer1").value);
+       const integer2 = parseInt(document.getElementById("integer2").value);
+       const operation = document.getElementById("operation").value;
+let result1;
+ switch (operation) {
+    case "add":
+     result1 = integer1 + integer2;
+      break;
+      case "subtract":
+      result1 = integer1 - integer2;
+       break;
+       case "multiply":
+        result1 = integer1 * integer2;
+         break;
+         case "divide":
+          result1 = integer1 / integer2;
+          break;
+           default:
+           result1 = "Invalid operation";
+        }
+        document.getElementById("output1").textContent = "Result: " + result1;
+ // Send the result and input values to the iOS app    
+window.webkit.messageHandlers.pwaHandler.postMessage({
+     integer1: integer1,
+     integer2: integer2,
+      operation: operation,
+       output: result,
+     });}
 
 if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js');
