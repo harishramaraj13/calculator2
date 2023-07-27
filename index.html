@@ -30,7 +30,7 @@
  <p id="output1">Result: </p> -->
 
  <button id="sendbutton">Send</button>
- <p id="output2">what happened: </p>
+<!--  <p id="output2">what happened: </p> -->
 
  <script src="operate.js"></script>
 <script>
@@ -91,20 +91,20 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
        output: result,
      });}
 
-     function sendinput(){
-        window.webkit.messageHandlers.postMessage({result: result});
-        result2 = 111
-        document.getElementById("output2").textContent = "what happened: " + result2;
-     }
+     // function sendinput(){
+     //    window.webkit.messageHandlers.postMessage({result: result});
+     //    result2 = 111
+     //    document.getElementById("output2").textContent = "what happened: " + result2;
+     // }
 
-     function perform(){
-    window.webkit.messageHandlers.pwaHandler.postMessage({
-     integer1: integer1,
-     integer2: integer2,
-      operation: operation,
-       output: result
-     });
-     }
+    //  function perform(){
+    // window.webkit.messageHandlers.pwaHandler.postMessage({
+    //  integer1: integer1,
+    //  integer2: integer2,
+    //   operation: operation,
+    //    output: result
+    //  });
+    //  }
 
      const button = document.getElementById("sendbutton");
      button.addEventListener("click", () => {
