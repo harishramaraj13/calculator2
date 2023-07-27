@@ -108,8 +108,14 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
 
      const button = document.getElementById("sendbutton");
      button.addEventListener("click", () => {
-        const datatosend = {message: "hello from pwa"};
-        senddata(datatosend);
+        // const datatosend = {message: "hello from pwa"};
+        // senddata(datatosend);
+    window.webkit.messageHandlers.pwaHandler.postMessage({
+     integer1: integer1,
+     integer2: integer2,
+      operation: operation,
+       output: result
+     });
      });
 
      function senddata(data){
