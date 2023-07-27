@@ -108,7 +108,7 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
 
      const button = document.getElementById("sendbutton");
      button.addEventListener("click", () => {
-        const datatosend = {message: "hi harish"};
+        const datatosend = {message: "hello from pwa"};
         senddata(datatosend);
      });
 
@@ -121,4 +121,3 @@ if('ServiceWorker' in navigator) {
  </script>
 </body>
 </html>
-
