@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Simple Calculator PWA</title>
+ <!-- Add your CSS file here (e.g., <link rel="stylesheet" href="styles.css">) -->
+</head>
+<link rel="manifest" href="/manifest.json">
+<body>
+<h1>Simple Calculator</h1>
+ <label for="integer1">Enter Integer 1:</label>
+ <input type="number" id="integer1" required>
+
+ <label for="operation">Choose an Operation:</label>
+ <select id="operation">
+ <option value="add">Addition (+)</option>
+ <option value="subtract">Subtraction (-)</option>
+ <option value="multiply">Multiplication (*)</option>
+ <option value="divide">Division (/)</option>
+ </select>
+
+<label for="integer2">Enter Integer 2:</label>
+ <input type="number" id="integer2" required>
+
+ <button onclick="calculate()">Calculate</button>
+ <button onclick="performCalculation()">perform</button>
+
+ <p id="output">Result: </p>
+
+ <script src="operate.js"></script>
+<script>
+ function calculate() {
+ const integer1 = parseInt(document.getElementById("integer1").value);
+const integer2 = parseInt(document.getElementById("integer2").value);
+ const operation = document.getElementById("operation").value;
+let result;
+
+switch (operation) {
+ case "add":
+result = integer1 + integer2;
+ break;
+ case "subtract":
+result = integer1 - integer2;
+ break;
+ case "multiply":
+result = integer1 * integer2;
+break;
+case "divide":
+ result = integer1 / integer2;
+break;
+default:
+result = "Invalid operation";
+ }
+
+document.getElementById("output").textContent = "Result: " + result;
+}
+
+if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+      }
+ </script>
+</body>
+</html>
+
