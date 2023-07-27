@@ -109,7 +109,7 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
      const button = document.getElementById("sendbutton");
      button.addEventListener("click", () => {
         // const datatosend = {message: "hello harish done?"};
-      let res = String(result);
+      let res = result.toString()
         const datatosend = {message: res};
         senddata(datatosend);
      });
