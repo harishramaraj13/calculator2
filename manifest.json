@@ -1,8 +1,8 @@
 {
     "lang": "en-us",
-    "name": "PW app",
-    "short_name": "PWA",
-    "description": "A basic application",
+    "name": "calculator PW app",
+    "short_name": "PWA1",
+    "description": "A basic calculator application",
     "background_color": "#2f3d58",
     "theme_color": "#2f3d58",
     "orientation": "any",
