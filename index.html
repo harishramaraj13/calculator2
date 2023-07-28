@@ -28,6 +28,7 @@
  <!-- <button onclick="performCalculation()">perform</button>
  <p id="output1">Result: </p> -->
  <button id="sendbutton">Send</button>
+  <button id="sendbutton1">Send button1</button>
 <!--  <p id="output2">what happened: </p> -->
  <script src="operate.js"></script>
 <script>
@@ -101,6 +102,13 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
      button.addEventListener("click", () => {
         const datatosend = {message: "hello harish data is sent"};
         // const datatosend = {"hello something happening"};
+        senddata(datatosend);
+     });
+
+      const button1 = document.getElementById("sendbutton1");
+     button1.addEventListener("click", () => {
+      const sampledata = "hello harish data is sent";
+        const datatosend = {message: sampledata};
         senddata(datatosend);
      });
 
