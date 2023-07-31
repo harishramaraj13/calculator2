@@ -37,6 +37,7 @@
 const integer2 = parseInt(document.getElementById("integer2").value);
  const operation = document.getElementById("operation").value;
 let result;
+  
 switch (operation) {
  case "add":
 result = integer1 + integer2;
@@ -55,6 +56,7 @@ result = "Invalid operation";
  }
 document.getElementById("output").textContent = "Result: " + result;
 }
+ 
 function performCalculation()
  {
      const integer1 = parseInt(document.getElementById("integer1").value);
@@ -85,6 +87,7 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
       operation: operation,
        output: result,
      });}
+ 
      // function sendinput(){
      //    window.webkit.messageHandlers.postMessage({result: result});
      //    result2 = 111
@@ -98,17 +101,18 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
     //    output: result
     //  });
     //  }
+ 
      const button = document.getElementById("sendbutton");
      button.addEventListener("click", () => {
-        // const datatosend = {message: "hello harish edited data is sent"};
-        const datatosend = {"hello something happening"};
+        const datatosend = {message: "hello harish edited data is sent"};
+        // const datatosend = {"hello something happening"};
         senddata(datatosend);
      });
 
       const button1 = document.getElementById("sendbutton1");
      button1.addEventListener("click", () => {
-      result = document.getElementById("output");
-      const sampledata = result.toString();
+      result1 = document.getElementById("output");
+      const sampledata = result1.toString();
         // const datatosend1 = {message: sampledata};
          const datatosend1 = {sampledata};
         senddata(datatosend1);
