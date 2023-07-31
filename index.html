@@ -100,7 +100,7 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
     //  }
      const button = document.getElementById("sendbutton");
      button.addEventListener("click", () => {
-        const datatosend = {"hello harish edited data is sent"};
+        const datatosend = {message: "hello harish edited data is sent"};
         // const datatosend = {"hello something happening"};
         senddata(datatosend);
      });
@@ -108,7 +108,7 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
       const button1 = document.getElementById("sendbutton1");
      button1.addEventListener("click", () => {
       const sampledata = result.toString();
-        const datatosend1 = {sampledata};
+        const datatosend1 = {message: sampledata};
         senddata(datatosend1);
      });
 
