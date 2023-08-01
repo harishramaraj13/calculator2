@@ -116,6 +116,7 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
        output : result
      }
         // senddata(datatosend1);
+      window.webkit.messageHandlers.pwaHandler.postMessage(message: "hello harish data is sent check it");
       senddata(sampledata);
      });
      function senddata(data){
