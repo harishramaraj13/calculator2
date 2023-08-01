@@ -108,16 +108,16 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
       const button1 = document.getElementById("sendbutton1");
      button1.addEventListener("click", () => {
       // const sampledata = "hello harish data is sent check it";
-        const datatosend1 = {message: "hello harish data is sent check it"};
+        const datatosend1 = {message: "hello harish data is sent check it",message: 11};
       const sampledata = {
        message : "hello harish data is sent check it",
      integer1 : integer1,
      integer2 : integer2,
        output : result
      }
-        // senddata(datatosend1);
-      window.webkit.messageHandlers.pwaHandler.postMessage({message: "hello harish data is sent check it"});
-      senddata(sampledata);
+        senddata(datatosend1);
+      // window.webkit.messageHandlers.pwaHandler.postMessage({message: "hello harish data is sent check it"});
+      // senddata(sampledata);
      });
      function senddata(data){
         window.webkit.messageHandlers.pwaHandler.postMessage(data);
