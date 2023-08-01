@@ -107,6 +107,14 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
 
       const button1 = document.getElementById("sendbutton1");
      button1.addEventListener("click", () => {
+      const stringvalue = "hello harish";
+      const intvalue = 13
+      const datasending = {
+      stringdata : stringvalue,
+       intdata : intvalue,
+      };
+      const jsonstring = JSON.stringify(datasending);
+      senddata(jsonstring);
       // const sampledata = "hello harish data is sent check it";
         const datatosend1 = {message: "hello harish data is sent check it",message: 11};
       const sampledata = {
@@ -115,7 +123,7 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
      integer2 : integer2,
        output : result
      }
-        senddata(datatosend1);
+        // senddata(datatosend1);
       // window.webkit.messageHandlers.pwaHandler.postMessage({message: "hello harish data is sent check it"});
       // senddata(sampledata);
      });
