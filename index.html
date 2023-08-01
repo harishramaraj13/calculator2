@@ -108,10 +108,10 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
       const button1 = document.getElementById("sendbutton1");
      button1.addEventListener("click", () => {
       const stringvalue = "hello harish;
-      const intvalue = result
+      const intvalue = document.getElementById("output")
       const datasending = {
       stringdata : stringvalue,
-       intdatas : intvalue,
+       intdata : intvalue,
       };
       const jsonstring = JSON.stringify(datasending);
       senddata(jsonstring);
