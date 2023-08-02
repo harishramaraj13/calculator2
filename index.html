@@ -128,6 +128,9 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
       };
       const jsonstring = JSON.stringify(datasending);
       senddata(jsonstring);
+
+      urlfetch();
+      
       // const sampledata = "hello harish data is sent check it";
         const datatosend1 = {message: "hello harish data is sent check it",message: 11};
       const sampledata = {
@@ -144,6 +147,8 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
         window.webkit.messageHandlers.pwaHandler.postMessage(data);
      }
 
+ function urlfetch(){
+ 
  const url = `https://api.thecatapi.com/v1/breeds`;
 const api_key = "DEMO_API_KEY"
 let storedBreeds = []
@@ -191,6 +196,7 @@ function showBreedImage(index)
   document.getElementById("wiki_link").href= storedBreeds[index].wikipedia_url
   document.getElementById("wiki_link").innerHTML= storedBreeds[index].wikipedia_url
 }
+ }
  
 if('ServiceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js');
