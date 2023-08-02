@@ -121,12 +121,12 @@ window.webkit.messageHandlers.pwaHandler.postMessage({
       const button1 = document.getElementById("sendbutton1");
      button1.addEventListener("click", () => {
       const stringvalue = "hello harish";
-      const intvalue = 13
       const urlvalue = "https://api.thecatapi.com/v1/breeds";
+      const intvalue = 13
       const datasending = {
       stringdata : stringvalue,
-       intdata : intvalue,
        urldata : urlvalue,
+       intdata : intvalue,
       };
       const jsonstring = JSON.stringify(datasending);
       senddata(jsonstring);
