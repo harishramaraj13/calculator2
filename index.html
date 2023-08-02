@@ -42,9 +42,15 @@
 <div>
 <img id="breed_image"></img>
 </div>
- 
+ <div>
+  <img src = "https://cdn2.thecatapi.com/images/MTYxMjQ0OA.jpg"/>
+ </div>
  <script src="operate.js"></script>
 <script>
+
+ function receivemessagefromapp(message){
+ console.log('message received from app: ', message);
+ }
  function calculate() {
  const integer1 = parseInt(document.getElementById("integer1").value);
 const integer2 = parseInt(document.getElementById("integer2").value);
